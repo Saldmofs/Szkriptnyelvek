@@ -13,19 +13,22 @@ class Hangrend(Enum):
         magas = False
 
         for n in szo:
-            for e in Hangrend.MELY.value:
-                if n == e:
-                    mely = True
-            for e in Hangrend.MAGAS.value:
-                if n == e:
-                    magas = True
+            
+            if n in Hangrend.MELY.value:
+                mely = True
+            
+            if n in Hangrend.MAGAS.value:
+                magas = True
 
         if mely and magas:
             return Hangrend.VEGYES.name
+        
         elif mely:
             return Hangrend.MELY.name
+        
         elif magas:
             return Hangrend.MAGAS.name
+        
         else:
             return Hangrend.SEMMILYEN.name
 
