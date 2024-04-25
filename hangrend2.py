@@ -2,37 +2,38 @@
 
 from enum import Enum,auto
 
-class hangrendenum(Enum):
+class Hangrend(Enum):
     MELY = "aáoóuú"
     MAGAS = "eéiíöőüű"
     VEGYES = auto()
     SEMMILYEN = auto()
+    
     def hangrend(szo):
         mely = False
         magas = False
 
         for n in szo:
-            for me in hangrendenum.MELY.value:
-                if n == me:
+            for e in Hangrend.MELY.value:
+                if n == e:
                     mely = True
-            for ma in hangrendenum.MAGAS.value:
-                if n == ma:
+            for e in Hangrend.MAGAS.value:
+                if n == e:
                     magas = True
 
         if mely and magas:
-            return hangrendenum.VEGYES.name
+            return Hangrend.VEGYES.name
         elif mely:
-            return hangrendenum.MELY.name
+            return Hangrend.MELY.name
         elif magas:
-            return hangrendenum.MAGAS.name
+            return Hangrend.MAGAS.name
         else:
-            return hangrendenum.SEMMILYEN.name
+            return Hangrend.SEMMILYEN.name
 
 
 
 def main():
     szo = input("Szó: ")
-    print(f"{szo} hangrendje: {hangrendenum.hangrend(szo)}")
+    print(f"{szo} hangrendje: {Hangrend.hangrend(szo)}")
     
     
 if __name__ == "__main__":
