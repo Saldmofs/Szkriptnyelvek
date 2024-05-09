@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def binpalindrom(num):
+def binpalindrom(num: list) -> int:
     eredmeny = 0
     for n in num:
         if str(n) == str(n)[::-1] and str(bin(n)[2:]) == str(bin(n)[2:])[::-1]:
