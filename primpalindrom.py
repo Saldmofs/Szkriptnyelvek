@@ -2,7 +2,7 @@
 
 from prim import is_prime_mr
 
-def palindromesprim(num):
+def palindromesprim(num: int) -> int:
     while True:    
         if str(num) == str(num)[::-1] and is_prime_mr(num):
             return num
